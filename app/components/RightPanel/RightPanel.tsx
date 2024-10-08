@@ -1,5 +1,6 @@
 "use client";
-import { useCarouselStore } from "@/app/store/CarouselStore";
+import React from "react";
+import { useCarouselStore } from "../../store/CarouselStore"
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Emoji from "reactjs-emojis";

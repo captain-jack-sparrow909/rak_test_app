@@ -1,9 +1,10 @@
 "use client";
-import { useCarouselStore } from "@/app/store/CarouselStore";
+import React from "react";
+import { useCarouselStore } from "../../store/CarouselStore";
 import { VscDebugBreakpointDataUnverified } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { ApiRequest } from "@/app/services/Api";
+import { ApiRequest } from "../../services/Api";
 import { useState } from "react";
 import { Bars } from "react-loader-spinner";
 

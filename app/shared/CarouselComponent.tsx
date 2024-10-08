@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { GoDotFill } from "react-icons/go";
 import { GoDot } from "react-icons/go";
+import React from "react";
 
 interface Data {
   id: number;
@@ -42,6 +43,7 @@ const CarouselComponent = ({ currentIndex, items }: CarouselComponentProps) => {
                   : { scale: 1, opacity: 0.5 }
               }
               transition={{ duration: 0.5 }}
+              data-testid="carousel-dot"
             >
               {index === currentIndex ? (
                 <GoDot key={item.id} className="text-2xl text-white" />

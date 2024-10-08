@@ -1,7 +1,8 @@
 "use client";
+import React from "react";
 import { GiBurningBook } from "react-icons/gi";
-import { useCarouselStore } from "@/app/store/CarouselStore";
-import CarouselComponent from "@/app/shared/CarouselComponent";
+import { useCarouselStore } from "../../store/CarouselStore";
+import CarouselComponent from "../../shared/CarouselComponent"
 
 const LeftPanel = () => {
   const items = useCarouselStore((state) => state.data);
