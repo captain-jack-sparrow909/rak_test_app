@@ -1,6 +1,11 @@
+"use client";
 import { useCarouselStore } from "@/app/store/CarouselStore";
 import { VscDebugBreakpointDataUnverified } from "react-icons/vsc";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { ApiRequest } from "@/app/services/Api";
+import { useState } from "react";
+import { Bars } from "react-loader-spinner";
 
 const QuestionSlide = ({ item }: { item: string }) => {
   return (
@@ -13,6 +18,31 @@ const QuestionSlide = ({ item }: { item: string }) => {
 
 const SummarySlide = () => {
   const items = useCarouselStore((state) => state.data);
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigateToSubmitPage = async () => {
+    setIsLoading(true);
+    await ApiRequest();
+    setIsLoading(false);
+    router.push("/SubmitPage");
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center bg-[#6B54FE] items-center w-full h-full">
+        <Bars
+          height="160"
+          width="160"
+          color="#fff"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={isLoading}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="bg-[#6B54FE] p-8 h-full w-full flex flex-col items-center gap-2">
@@ -33,7 +63,10 @@ const SummarySlide = () => {
           </motion.div>
         ))}
       </div>
-      <button className="bg-white text-[#6B54FE] font-bold rounded-md p-2 mt-4 w-[8rem]">
+      <button
+        className="bg-white text-[#6B54FE] font-bold rounded-md p-2 mt-4 w-[8rem]"
+        onClick={() => navigateToSubmitPage()}
+      >
         SUBMIT
       </button>
     </div>

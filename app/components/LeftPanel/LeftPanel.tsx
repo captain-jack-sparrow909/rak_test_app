@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { GiBurningBook } from "react-icons/gi";
 import { useCarouselStore } from "@/app/store/CarouselStore";
 import CarouselComponent from "@/app/shared/CarouselComponent";
@@ -14,7 +14,7 @@ const LeftPanel = () => {
     if (currentIndex === items.length - 1) {
       setIsFinalSlide(true);
       return;
-    } 
+    }
     setCurrentIndex(currentIndex + 1);
   };
 
@@ -23,9 +23,14 @@ const LeftPanel = () => {
   };
 
   return (
-    <div className="flex flex-col w-[50%] h-full bg-[#6B54FE] p-8 relative">
+    <div className="flex flex-col w-[50%] h-full max-1050:w-full max-1050:h-[70%] bg-[#6B54FE] p-4 sm:p-8 relative">
       <GiBurningBook className="text-4xl text-white" />
-      <CarouselComponent currentIndex={currentIndex} items={items}  nextSlide={nextSlide} prevSlide={prevSlide}/>
+      <CarouselComponent
+        currentIndex={currentIndex}
+        items={items}
+        nextSlide={nextSlide}
+        prevSlide={prevSlide}
+      />
     </div>
   );
 };
