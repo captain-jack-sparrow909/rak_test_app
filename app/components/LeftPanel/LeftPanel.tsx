@@ -24,7 +24,7 @@ const LeftPanel = () => {
   };
 
   return (
-    <div className="flex flex-col w-[50%] h-full max-1050:w-full max-1050:h-[70%] bg-[#6B54FE] p-4 sm:p-8 relative">
+    <div className="flex flex-col w-[50%] h-[100vh] max-1050:w-full max-1050:h-[70vh] bg-[#6B54FE] p-4 sm:p-8 relative">
       <GiBurningBook className="text-4xl text-white" />
       <CarouselComponent
         currentIndex={currentIndex}

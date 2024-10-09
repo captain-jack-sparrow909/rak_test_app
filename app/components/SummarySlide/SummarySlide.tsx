@@ -25,13 +25,13 @@ const SummarySlide = () => {
   const navigateToSubmitPage = async () => {
     setIsLoading(true);
     await ApiRequest();
-    setIsLoading(false);
     router.push("/SubmitPage");
+    setIsLoading(false);
   };
 
   if (isLoading) {
     return (
-      <div className="flex justify-center bg-[#6B54FE] items-center w-full h-full">
+      <div className="flex justify-center bg-[#6B54FE] items-center w-full min-h-screen">
         <Bars
           height="160"
           width="160"
@@ -46,7 +46,7 @@ const SummarySlide = () => {
   }
 
   return (
-    <div className="bg-[#6B54FE] p-8 h-full w-full flex flex-col items-center gap-2">
+    <div className="bg-[#6B54FE] p-8 h-max w-full flex flex-col items-center gap-2">
       <h2 className="font-bold text-4xl">SUMMARY</h2>
       <div className="flex flex-col border-white border-2 rounded-md p-8">
         {items.map((item, index) => (

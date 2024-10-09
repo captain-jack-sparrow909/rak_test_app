@@ -54,7 +54,7 @@ const RightPanel = () => {
   };
 
   return (
-    <div className="flex flex-row w-[50%] h-full bg-white max-1050:w-full max-1050:h-[30%] justify-center items-center gap-[3rem] sm:gap-[5rem] md:gap-[7rem] max-380:gap-[1rem]">
+    <div className="flex flex-row w-[50%] h-screen bg-white max-1050:w-full max-1050:h-[30vh] justify-center items-center gap-[3rem] sm:gap-[5rem] md:gap-[7rem] max-380:gap-[1rem]">
       <motion.div
         className="cursor-pointer rounded-full p-2"
         animate={

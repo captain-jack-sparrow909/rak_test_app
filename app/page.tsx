@@ -9,7 +9,7 @@ import SummarySlide from "./components/SummarySlide/SummarySlide";
 export default function Home() {
   const isFinalSlide = useCarouselStore((state) => state.isFinalSlide);
   return (
-    <div className="flex h-screen w-screen flex-row max-1050:flex-col font-[family-name:var(--font-geist-sans)]">
+    <div className="flex h-max w-screen flex-row max-1050:flex-col font-[family-name:var(--font-geist-sans)]">
       <AnimatePresence>
         {isFinalSlide ? (
           <motion.div
@@ -18,7 +18,7 @@ export default function Home() {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             transition={{ duration: 1.1, ease: "easeInOut" }}
-            className="absolute w-full h-full flex items-center justify-center"
+            className="absolute w-full h-max flex items-center justify-center"
           >
             <SummarySlide />
           </motion.div>
