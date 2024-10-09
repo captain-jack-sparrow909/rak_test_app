@@ -28,6 +28,8 @@ Once you complete the questions, you're moved to the `SummarySlide`, which conta
 ## Testing
 
 Test cases are written for each component. To run the test cases, please enable the `babel.config.js` file and then run:
+why enable babel.config.js ?
+To run the test cases locally, you need to make a small change, the latest version of Next.js has some issue with babel and Jest framework requires `babel.config.js` file. So to run the test cases there’s a file named `enable-testing.js` rename that to babel.config.js and uncomment the code inside it. And then run `npm run test` and you will get the test cases execution + coverage.
 
 ```bash
 npm run test
