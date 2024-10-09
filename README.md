@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carousel Application
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project that implements a carousel component with animated transitions using [Framer Motion](https://www.framer.com/motion/). The application is styled with [Tailwind CSS](https://tailwindcss.com) and uses custom fonts.
 
-First, run the development server:
+## Packages Used
+
+This application uses the following packages:
+
+- `framer-motion`: `^11.11.1`
+- `zustand`: `^5.0.0-rc.2`
+- `reactjs-emojis`: `^1.0.4`
+- `react-loader-spinner`: `^6.1.6`
+- `react-icons`: `^5.3.0`
+- `jest`: `^29.7.0` (for testing)
+- `tailwindcss`: `^3.4.1`
+
+## Application Structure
+
+I have custom built the Carousel component using React/Next.js, Tailwind, and Framer Motion for animating the transition. The main page is composed of 2 Panels: `LeftPanel` and `RightPanel`.
+
+- **LeftPanel**: Contains the carousel and the questions.
+- **RightPanel**: Contains the emojis to react to the questions.
+
+State of the application is managed through Zustand.
+
+Once you complete the questions, you're moved to the `SummarySlide`, which contains all the questions and their respective answers. Upon clicking the submit button, a mock API request is sent which waits for 2 seconds. During that time, a loading spinner is shown. Upon successful completion of the API request, you are moved to the Submit page.
+
+## Testing
+
+Test cases are written for each component. To run the test cases, please enable the `babel.config.js` file and then run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## LIVE APPLICATION
+[LIVE APP](https://jabir-khan-rak-test-app.vercel.app/)
