@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import LeftPanel from "./components/LeftPanel/LeftPanel";
 import RightPanel from "./components/RightPanel/RightPanel";
