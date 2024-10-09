@@ -11,8 +11,6 @@ interface Data {
 interface CarouselComponentProps {
   currentIndex: number;
   items: Data[];
-  prevSlide: () => void;
-  nextSlide: () => void;
 }
 
 const CarouselComponent = ({ currentIndex, items }: CarouselComponentProps) => {

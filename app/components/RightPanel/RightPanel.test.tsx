@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import {describe, expect, test} from '@jest/globals';
-import { render, screen } from '@testing-library/react';
+import {fireEvent, render, screen, waitFor } from '@testing-library/react';
 import RightPanel from './RightPanel';
 
 // Mocking framer-motion components for tests
@@ -42,6 +42,7 @@ describe('CarouselComponent', () => {
       activeIndex: currentIndex,
       setActiveIndex: jest.fn(),
       setIsFinalSlide: jest.fn(),
+      setSelectEmoji: jest.fn(),
     })),
   }));
 
@@ -52,4 +53,17 @@ describe('CarouselComponent', () => {
     expect(screen).toMatchSnapshot();
   });
 
+  test('handles emoji click and transitions to next slide', async () => {
+
+    render(<RightPanel />);
+
+    const thumbsupEmoji = screen.getByTestId('thumbsup');
+    fireEvent.click(thumbsupEmoji);
+
+    await waitFor(() => {
+        expect(screen).toMatchSnapshot();
+    });;
 });
+
+});
+

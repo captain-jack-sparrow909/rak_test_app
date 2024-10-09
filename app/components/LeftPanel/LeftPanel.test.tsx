@@ -37,13 +37,20 @@ describe('CarouselComponent', () => {
 
   //mocking the useCarouselStore hook
   jest.mock('../../store/CarouselStore', () => ({
-    useCarouselStore: jest.fn(() => ({
-      data,
-      activeIndex: currentIndex,
-      setActiveIndex: jest.fn(),
-      setIsFinalSlide: jest.fn(),
-    })),
+    useCarouselStore: jest.fn((selector) => {
+      const state = {
+        data,
+        activeIndex: currentIndex,
+        setActiveIndex: jest.fn(),
+        setIsFinalSlide: jest.fn(),
+      };
+      return selector(state);
+    }),
   }));
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   test('renders carousel component and matches snapshot', () => {
     render(

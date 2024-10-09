@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import {describe, expect, test} from '@jest/globals';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import SummarySlide from './SummarySlide';
+import '@testing-library/jest-dom';
 import mockRouter from 'next-router-mock';
 import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
 
@@ -71,5 +72,20 @@ describe('CarouselComponent', () => {
         );
     expect(screen).toMatchSnapshot();
   });
+
+  test('displays loading spinner when isLoading is true', async () => {
+    render(
+        <RouterContext.Provider value={mockRouter}>
+            <SummarySlide />
+        </RouterContext.Provider>
+    );
+
+    fireEvent.click(screen.getByText('SUBMIT'));
+
+    await waitFor(() => {
+        expect(screen).toMatchSnapshot();
+    });
+});
+
 
 });

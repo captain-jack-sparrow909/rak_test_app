@@ -65,7 +65,9 @@ const RightPanel = () => {
         transition={{ duration: 0.3 }}
         onClick={() => handleClick("thumbsup", "Satisfied")}
       >
-        <Emoji name="thumbsup" size={emojiSize} />
+        <div data-testid="thumbsup">
+          <Emoji name="thumbsup" size={emojiSize} />
+        </div>
       </motion.div>
       <motion.div
         className="cursor-pointer rounded-full p-2"
